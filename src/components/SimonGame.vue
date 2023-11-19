@@ -156,7 +156,7 @@ export default {
 .btn-start {
   width: 208px;
   height: 32px;
-  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
   text-transform: uppercase;
   font-family: Trattatello, fantasy;
   color: #FFf;
@@ -178,21 +178,21 @@ export default {
 }
 .yellow {
   background-color: #f1c40f;
-  border-radius: 0px 10px 0px 10px;
+  border-radius: 0 10px 0 10px;
 }
 
 .blue {
   background-color: #3498db;
-  border-radius: 0px 10px 0px 10px;
+  border-radius: 0 10px 0 10px;
 }
 
 .green {
   background-color: #2ecc71;
-  border-radius: 10px 0px 10px 0px;
+  border-radius: 10px 0 10px 0;
 }
 
 .red {
   background-color: #e74c3c;
-  border-radius: 10px 0px 10px 0px;
+  border-radius: 10px 0 10px 0;
 }
 </style>
