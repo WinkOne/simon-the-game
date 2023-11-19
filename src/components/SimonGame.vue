@@ -36,27 +36,28 @@
 export default {
   data () {
     return {
-      round: 0,
-      buttonText: 'Start',
-      inGame: false,
       level: 'Easy',
+      round: 0,
+      inGame: false,
       time: 1500,
       timeoutID: null,
-      audio: {
-        1: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
-        2: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
-        3: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
-        4: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
-      },
+      buttonText: 'Start',
       levelTime: {
         Easy: '1500',
         Medium: '1000',
         Hard: '400'
       },
       orderList: [],
-      userList: []
+      userList: [],
+      audio: {
+        1: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
+        2: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
+        3: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
+        4: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
+      }
     }
   },
+
   methods: {
     click (id) {
       this.audio[id].play()
@@ -114,6 +115,17 @@ export default {
       }
     },
 
+    timer () {
+      this.timeoutID = setTimeout(() => {
+        this.gameOver()
+      }, this.time)
+    },
+
+    random () {
+      const num = 1 + Math.random() * (4 + 1 - 1)
+      return Math.floor(num)
+    },
+
     gameOver () {
       this.buttonText = 'Game Over'
       setTimeout(() => {
@@ -125,17 +137,6 @@ export default {
       this.userList = []
       this.orderList = []
     },
-
-    timer () {
-      this.timeoutID = setTimeout(() => {
-        this.gameOver()
-      }, this.time)
-    },
-
-    random () {
-      const num = 1 + Math.random() * (4 + 1 - 1)
-      return Math.floor(num)
-    }
   }
 
 }
